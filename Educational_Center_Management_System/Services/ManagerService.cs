@@ -32,7 +32,8 @@ namespace Educational_Center_Management_System.DataAccessLayer
 
         public bool DeleteTeacher(int teacherId)
         {
-            return _teacherManagerService.DeleteTeacher(teacherId);
+            //return _teacherManagerService.DeleteTeacher(teacherId);
+            return false;
         }
 
         public bool AddStudent(Student student)
@@ -43,7 +44,8 @@ namespace Educational_Center_Management_System.DataAccessLayer
 
         public bool AddTeacher(Teacher teacher)
         {
-            return _teacherManagerService.AddTeacher(teacher);
+            //return _teacherManagerService.AddTeacher(teacher);
+            return false;
         }
 
         public bool CreateClass(Class newClass)
@@ -60,7 +62,8 @@ namespace Educational_Center_Management_System.DataAccessLayer
 
         public List<Teacher> GetAllTeachers()
         {
-            return _teacherManagerService.GetAllTeachers();
+            //return _teacherManagerService.GetAllTeachers();
+            return new List<Teacher>();
         }
 
         public Student? GetStudent(int studentId)
@@ -69,9 +72,10 @@ namespace Educational_Center_Management_System.DataAccessLayer
             return null;
         }
 
-        public Teacher GetTeacher(int teacherId)
+        public Teacher? GetTeacher(int teacherId)
         {
-            return _teacherManagerService.GetTeacher(teacherId);
+            //return _teacherManagerService.GetTeacher(teacherId);
+            return null;
         }
 
         public bool UpdateClass(Class updatedClass)
@@ -88,7 +92,8 @@ namespace Educational_Center_Management_System.DataAccessLayer
 
         public bool UpdateTeacher(Teacher teacher)
         {
-            return _teacherManagerService.UpdateTeacher(teacher);
+            //return _teacherManagerService.UpdateTeacher(teacher);
+            return false;
         }
     }
 }

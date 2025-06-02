@@ -13,7 +13,7 @@ namespace Educational_Center_Management_System.Models
         public string LastName { get; set; }
         public string Fathername { get; set; }
         public DateOnly BirthDate { get; set; }
-        public byte[] Photo { get; set; }
+        public byte[]? Photo { get; set; }
         public string PhoneNumber { get; set; }
         public DateOnly JoinDate { get; set; }
         public DateOnly LeaveDate { get; set; }

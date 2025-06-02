@@ -13,7 +13,7 @@ namespace Educational_Center_Management_System.Services.Interfaces
         public bool AddTeacher(Teacher teacher);
         public bool DeleteTeacher(int teacherId);
         public bool UpdateTeacher(Teacher teacher);
-        public Teacher GetTeacher(int teacherId);
+        public Teacher? GetTeacher(int teacherId);
         public List<Teacher> GetAllTeachers();
         public bool CreateClass(Class newClass);
         public bool DeleteClass(int classId);
