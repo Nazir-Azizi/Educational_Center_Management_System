@@ -10,12 +10,12 @@ namespace Educational_Center_Management_System.Services
         {
             _studentSeriviceRepository = new StudentServiceRepository();
         }
-        public Class GetClass(int studentId)
+        public Task<List<Class>> GetClass(int studentId)
         {
             return _studentSeriviceRepository.GetClass(studentId);
         }
 
-        public List<Score> GetScore(int studentId)
+        public Task<List<ScoreForDisplay>> GetScore(int studentId)
         {
             return _studentSeriviceRepository.GetScore(studentId);
         }

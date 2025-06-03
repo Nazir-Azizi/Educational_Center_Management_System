@@ -17,7 +17,7 @@ namespace Educational_Center_Management_System.Test.DateAccessLayer.Repositories
                 Teacher = 1,
                 Semester = "B",
                 Name = "Math 101",
-                Time = "08:00:00",
+                Time = new TimeSpan(8,0,0),
                 Date = new DateOnly(2025, 9, 1)
             };
             bool res = await classManagerService.CreateClass(newClass);
@@ -41,7 +41,7 @@ namespace Educational_Center_Management_System.Test.DateAccessLayer.Repositories
                 Teacher = 1,
                 Semester = "C",
                 Name = "Advance",
-                Time = "10:00:00",
+                Time = new TimeSpan(10,0,0),
                 Date = new DateOnly(2025, 9, 1)
             };
             bool res = await classManagerService.UpdateClass(updatedClass);

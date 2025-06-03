@@ -18,82 +18,69 @@ namespace Educational_Center_Management_System.DataAccessLayer
             _classManagerService = new ClassManagerService();
         }
 
-        public bool DelelteStudent(int studentId)
+        public Task<bool> DelelteStudent(int studentId)
         {
-            //return _studentManagerService.DeleteStudent(studentId);
-            return false;
+            return _studentManagerService.DeleteStudent(studentId);
         }
 
-        public bool DeleteClass(int classId)
+        public Task<bool> DeleteClass(int classId)
         {
-            //return await _classManagerService.DeleteClass(classId);
-            return false;
+            return _classManagerService.DeleteClass(classId);
         }
 
-        public bool DeleteTeacher(int teacherId)
+        public Task<bool> DeleteTeacher(int teacherId)
         {
-            //return _teacherManagerService.DeleteTeacher(teacherId);
-            return false;
+            return _teacherManagerService.DeleteTeacher(teacherId);
         }
 
-        public bool AddStudent(Student student)
+        public Task<bool> AddStudent(Student student)
         {
-            //return _studentManagerService.AddStudent(student);
-            return false; // Placeholder for actual implementation
+            return _studentManagerService.AddStudent(student);
         }
 
-        public bool AddTeacher(Teacher teacher)
+        public Task<bool> AddTeacher(Teacher teacher)
         {
-            //return _teacherManagerService.AddTeacher(teacher);
-            return false;
+            return _teacherManagerService.AddTeacher(teacher);
         }
 
-        public bool CreateClass(Class newClass)
+        public Task<bool> CreateClass(Class newClass)
         {
-            //return _classManagerService.CreateClass(newClass);
-            return false;
+            return _classManagerService.CreateClass(newClass);
         }
 
-        public List<Student> GetAllStudents()
+        public Task<List<Student?>> GetAllStudents()
         {
-            //return _studentManagerService.GetAllStudents();
-            return new List<Student>(); // Placeholder for actual implementation
+            return _studentManagerService.GetAllStudents();
         }
 
-        public List<Teacher> GetAllTeachers()
+        public Task<List<Teacher?>> GetAllTeachers()
         {
-            //return _teacherManagerService.GetAllTeachers();
-            return new List<Teacher>();
+            return _teacherManagerService.GetAllTeachers();
         }
 
-        public Student? GetStudent(int studentId)
+        public Task<Student?> GetStudent(int studentId)
         {
-            //return _studentManagerService.GetStudent(studentId);
-            return null;
+            return _studentManagerService.GetStudent(studentId);
         }
 
-        public Teacher? GetTeacher(int teacherId)
+        public Task<Teacher?> GetTeacher(int teacherId)
         {
-            //return _teacherManagerService.GetTeacher(teacherId);
-            return null;
+            return _teacherManagerService.GetTeacher(teacherId);
         }
 
-        public bool UpdateClass(Class updatedClass)
+        public Task<bool> UpdateClass(Class updatedClass)
         {
-            //return _classManagerService.UpdateClass(updatedClass);
-            return false;
+            return _classManagerService.UpdateClass(updatedClass);
         }
 
-        public bool UpdateStudent(Student student)
+        public Task<bool> UpdateStudent(Student student)
         {
-            //return _studentManagerService.UpdateStudent(student);
-            return false;
+            return _studentManagerService.UpdateStudent(student);
         }
 
-        public bool UpdateTeacher(Teacher teacher)
+        public Task<bool> UpdateTeacher(Teacher teacher)
         {
-            //return _teacherManagerService.UpdateTeacher(teacher);
-            return false;
+            return _teacherManagerService.UpdateTeacher(teacher);
         }
     }
 }
