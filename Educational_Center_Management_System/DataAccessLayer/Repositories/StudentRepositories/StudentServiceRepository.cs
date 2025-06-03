@@ -9,11 +9,12 @@ namespace Educational_Center_Management_System.DataAccessLayer.Repositories.Stud
         public async Task<List<Class>> GetClass(int studentId)
         {
             SqlConnection connection = await DatabaseConnectionManager.Instance.GetOpenConnectionAsync();
-            string query = "SELECT c.class_id, c.class_state, c.class_teacher, " + 
-                "c.class_semester, c.class_name, c.class_time, c.class_date " + 
-                " FROM StudentClassRelationship scr JOIN Students s " + 
-                "ON s.s_id = scr.st_id JOIN Classes c ON scr.class_id = c.class_id";
+            string query = "SELECT c.class_id, c.class_state, c.class_teacher, " +
+                "c.class_semester, c.class_name, c.class_time, c.class_date " +
+                "FROM StudentClassRelationship s JOIN Classes c " +
+                "ON s.st_id = @Id and s.class_id = c.class_id";
             SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@Id", studentId);
             SqlDataReader reader = await command.ExecuteReaderAsync();
             List<Class> classes = new List<Class>();
             while(reader.Read())

@@ -40,7 +40,7 @@ namespace Educational_Center_Management_System.DataAccessLayer.Repositories.Mana
                            "class_date = @ClassDate WHERE class_id = @ClassId";
             using SqlCommand command = new SqlCommand(query, connection);
 
-            //command.Parameters.AddWithValue("@ClassId", newClass.ClassId);
+
             command.Parameters.AddWithValue("@ClassState", updatedClass.State);
             command.Parameters.AddWithValue("@ClassTeacher", updatedClass.Teacher);
             command.Parameters.AddWithValue("@ClassSemester", updatedClass.Semester);

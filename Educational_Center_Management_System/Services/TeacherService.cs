@@ -16,17 +16,17 @@ namespace Educational_Center_Management_System.Services
         {
             _teacherServiceRepository = new TeacherServiceRepository();
         }
-        public List<Class> GetClasses(int teacherId)
+        public Task<List<Class>> GetClasses(int teacherId)
         {
             return _teacherServiceRepository.GetClasses(teacherId);
         }
 
-        public bool SetScore(Score score)
+        public Task<bool> SetScore(Score score)
         {
             return _teacherServiceRepository.SetScore(score);
         }
 
-        public bool UpdateScore(Score score)
+        public Task<bool> UpdateScore(Score score)
         {
             return _teacherServiceRepository.UpdateScore(score);
         }

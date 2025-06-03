@@ -9,8 +9,8 @@ namespace Educational_Center_Management_System.Services.Interfaces
 {
     internal interface ITeacherService
     {
-        public List<Class> GetClasses(int teacherId);
-        public bool SetScore(Score score);
-        public bool UpdateScore(Score score);
+        public Task<List<Class>> GetClasses(int teacherId);
+        public Task<bool> SetScore(Score score);
+        public Task<bool> UpdateScore(Score score);
     }
 }
