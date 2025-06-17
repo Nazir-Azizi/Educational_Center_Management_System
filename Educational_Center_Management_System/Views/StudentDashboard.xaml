@@ -58,9 +58,19 @@
 
             </StackPanel>
         </Border>
-        <Image Grid.Column="1" Grid.Row="0" />
-        <StackPanel Grid.Column="1" Grid.Row="1">
-            
-        </StackPanel>
+        <Image Grid.Column="1" Grid.Row="0" Source="{Binding Student.Photo}"/>
+        <ScrollViewer Grid.Column="1" Grid.Row="1">
+            <StackPanel HorizontalAlignment="Center">
+                <DataGrid ItemsSource="{Binding Scores}" AutoGenerateColumns="False" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Class ID" Binding="{Binding ClassId}"/>
+                        <DataGridTextColumn Header="Class Namw" Binding="{Binding ClassName}"/>
+                        <DataGridTextColumn Header="Score" Binding="{Binding Number}"/>
+                        <DataGridTextColumn Header="Teacher" Binding="{Binding TeacherName}"/>
+                        <DataGridTextColumn Header="Class Date" Binding="{Binding ClassDate}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>
