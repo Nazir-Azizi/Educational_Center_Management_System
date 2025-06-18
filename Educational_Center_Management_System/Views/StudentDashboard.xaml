@@ -13,7 +13,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <Border Margin="5" BorderBrush="Black" CornerRadius="5" BorderThickness="1"
                  Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
@@ -59,18 +59,39 @@
             </StackPanel>
         </Border>
         <Image Grid.Column="1" Grid.Row="0" Source="{Binding Student.Photo}"/>
+
         <ScrollViewer Grid.Column="1" Grid.Row="1">
-            <StackPanel HorizontalAlignment="Center">
-                <DataGrid ItemsSource="{Binding Scores}" AutoGenerateColumns="False" IsReadOnly="True">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Class ID" Binding="{Binding ClassId}"/>
-                        <DataGridTextColumn Header="Class Namw" Binding="{Binding ClassName}"/>
-                        <DataGridTextColumn Header="Score" Binding="{Binding Number}"/>
-                        <DataGridTextColumn Header="Teacher" Binding="{Binding TeacherName}"/>
-                        <DataGridTextColumn Header="Class Date" Binding="{Binding ClassDate}"/>
-                    </DataGrid.Columns>
-                </DataGrid>
+            <StackPanel HorizontalAlignment="Center" Margin="10">
+                <TextBlock Text="Scores" FontSize="25" HorizontalAlignment="Center"/>
+                    <StackPanel HorizontalAlignment="Center">
+                        <DataGrid ItemsSource="{Binding Scores}" AutoGenerateColumns="False" IsReadOnly="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Class ID" Binding="{Binding ClassId}"/>
+                                <DataGridTextColumn Header="Class Namw" Binding="{Binding ClassName}"/>
+                                <DataGridTextColumn Header="Score" Binding="{Binding Number}"/>
+                                <DataGridTextColumn Header="Teacher" Binding="{Binding TeacherName}"/>
+                                <DataGridTextColumn Header="Class Date" Binding="{Binding ClassDate}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+
+                <TextBlock Text="Classes" FontSize="25" HorizontalAlignment="Center"/>
+
+                <StackPanel HorizontalAlignment="Center" Margin="0,0,0,10">
+                    <DataGrid ItemsSource="{Binding Classes}" AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Class ID" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Header="Teacher" Binding="{Binding Teacher}"/>
+                            <DataGridTextColumn Header="Semester" Binding="{Binding Semester}"/>
+                            <DataGridTextColumn Header="Class Name" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="Time" Binding="{Binding Time}"/>
+                            <DataGridTextColumn Header="Class Date" Binding="{Binding Date}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+
             </StackPanel>
         </ScrollViewer>
+        
     </Grid>
 </UserControl>

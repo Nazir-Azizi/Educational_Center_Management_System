@@ -1,10 +1,5 @@
 ﻿using Educational_Center_Management_System.Models;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Educational_Center_Management_System.ViewModels
 {
@@ -12,6 +7,7 @@ namespace Educational_Center_Management_System.ViewModels
     {
         public Student Student { get; set; }
         public ObservableCollection<ScoreForDisplay> Scores { get; set; }
+        public ObservableCollection<Class> Classes { get; set; }
         public StudentDashboardViewModel(/*Student student*/)
         {
             Student = new Student
@@ -45,6 +41,93 @@ namespace Educational_Center_Management_System.ViewModels
                     Number = 56.7M,
                     TeacherName = "Azizi",
                     ClassDate = new DateOnly(2024, 5, 6)
+                },
+                new ScoreForDisplay
+                {
+                    ClassId = 101,
+                    ClassName = "Prep",
+                    Number = 91.9M,
+                    TeacherName = "Azizi",
+                    ClassDate = new DateOnly(2024, 1, 6)
+                },
+                new ScoreForDisplay
+                {
+                    ClassId = 1,
+                    ClassName = "Advance A",
+                    Number = 56.7M,
+                    TeacherName = "Azizi",
+                    ClassDate = new DateOnly(2024, 5, 6)
+                },
+                new ScoreForDisplay
+                {
+                    ClassId = 101,
+                    ClassName = "Prep",
+                    Number = 91.9M,
+                    TeacherName = "Azizi",
+                    ClassDate = new DateOnly(2024, 1, 6)
+                },
+                new ScoreForDisplay
+                {
+                    ClassId = 1,
+                    ClassName = "Advance A",
+                    Number = 56.7M,
+                    TeacherName = "Azizi",
+                    ClassDate = new DateOnly(2024, 5, 6)
+                },
+                new ScoreForDisplay
+                {
+                    ClassId = 101,
+                    ClassName = "Prep",
+                    Number = 91.9M,
+                    TeacherName = "Azizi",
+                    ClassDate = new DateOnly(2024, 1, 6)
+                },
+                new ScoreForDisplay
+                {
+                    ClassId = 1,
+                    ClassName = "Advance A",
+                    Number = 56.7M,
+                    TeacherName = "Azizi",
+                    ClassDate = new DateOnly(2024, 5, 6)
+                },
+                new ScoreForDisplay
+                {
+                    ClassId = 101,
+                    ClassName = "Prep",
+                    Number = 91.9M,
+                    TeacherName = "Azizi",
+                    ClassDate = new DateOnly(2024, 1, 6)
+                },
+                new ScoreForDisplay
+                {
+                    ClassId = 1,
+                    ClassName = "Advance A",
+                    Number = 56.7M,
+                    TeacherName = "Azizi",
+                    ClassDate = new DateOnly(2024, 5, 6)
+                }
+            };
+            Classes = new ObservableCollection<Class>
+            {
+                new Class
+                {
+                    Id = 1023,
+                    State = 1,
+                    Teacher = 1,
+                    Semester = "AP",
+                    Name = "Prep",
+                    Time = new TimeSpan(6, 30,0),
+                    Date = new DateOnly(2024, 5, 1)
+                },
+                new Class
+                {
+                    Id = 5643,
+                    State = 1,
+                    Teacher = 2,
+                    Semester = "AZ",
+                    Name = "Level Six",
+                    Time = new TimeSpan(14, 0,0),
+                    Date = new DateOnly(2024, 10, 1)
                 }
             };
         }
