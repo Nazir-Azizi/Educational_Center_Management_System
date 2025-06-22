@@ -37,9 +37,10 @@ namespace Educational_Center_Management_System.DataAccessLayer.Repositories.Stud
         {
             SqlConnection connection = await DatabaseConnectionManager.Instance.GetOpenConnectionAsync();
             string query = "SELECT c.class_id, c.class_name, s.score, t.t_name, c.class_date FROM Scores s "
-                + "JOIN Students st ON @Id = st.s_id "
+                + "JOIN Students st ON s.st_id = st.s_id "
                 + "JOIN Classes c ON c.class_id = s.class_id "
-                + "JOIN Teachers t ON c.class_teacher = t.t_id;";
+                + "JOIN Teachers t ON c.class_teacher = t.t_id "
+                + "WHERE s.st_id = @Id";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@Id", studentId);
             SqlDataReader reader = await command.ExecuteReaderAsync();

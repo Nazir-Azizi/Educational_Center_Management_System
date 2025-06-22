@@ -18,5 +18,10 @@ namespace Educational_Center_Management_System.Models
         public DateOnly JoinDate { get; init; }
         public int State { get; init; }
         public string Password { get; init; }
+
+        public static implicit operator Task<object>(Student? v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

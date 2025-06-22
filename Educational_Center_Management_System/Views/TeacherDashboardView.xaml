@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="Educational_Center_Management_System.Views.TeacherDashboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Educational_Center_Management_System.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Column="0" Margin="20" Grid.RowSpan="2">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="ID: " VerticalAlignment="Center" FontSize="16" Margin="3"/>
+                    <TextBlock Text="{Binding Teacher.Id}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Name: " VerticalAlignment="Center" FontSize="16" Margin="3"/>
+                    <TextBlock Text="{Binding Teacher.Name}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Last Name: " VerticalAlignment="Center" FontSize="16" Margin="3"/>
+                    <TextBlock Text="{Binding Teacher.LastName}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Father Name : " VerticalAlignment="Center" FontSize="16" Margin="3"/>
+                    <TextBlock Text="{Binding Teacher.Fathername}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Date of Birth: " VerticalAlignment="Center" FontSize="16" Margin="5"/>
+                    <TextBlock Text="{Binding Teacher.BirthDate}" VerticalAlignment="Center" FontSize="16" Margin="5"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Phone Number: " VerticalAlignment="Center" FontSize="16" Margin="3"/>
+                    <TextBlock Text="{Binding Teacher.PhoneNumber}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Join Date: " VerticalAlignment="Center" FontSize="16" Margin="3"/>
+                    <TextBlock Text="{Binding Teacher.JoinDate}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Leave Date: " VerticalAlignment="Center" FontSize="16" Margin="3"/>
+                    <TextBlock Text="{Binding Teacher.LeaveDate}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="State: " VerticalAlignment="Center" FontSize="16" Margin="3"/>
+                    <TextBlock Text="{Binding Teacher.State}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Password: " VerticalAlignment="Center" FontSize="16" Margin="3"/>
+                    <TextBlock Text="{Binding Teacher.Password}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
+                </StackPanel>
+            </StackPanel>
+            
+            <Image Grid.Column="1"/>
+            
+        </Grid>
+        
+</UserControl>

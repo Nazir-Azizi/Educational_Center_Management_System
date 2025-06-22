@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Educational_Center_Management_System.Views.StudentDashboard"
+﻿<UserControl x:Class="Educational_Center_Management_System.Views.StudentDashboardView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -67,7 +67,7 @@
                         <DataGrid ItemsSource="{Binding Scores}" AutoGenerateColumns="False" IsReadOnly="True">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Class ID" Binding="{Binding ClassId}"/>
-                                <DataGridTextColumn Header="Class Namw" Binding="{Binding ClassName}"/>
+                                <DataGridTextColumn Header="Class Name" Binding="{Binding ClassName}"/>
                                 <DataGridTextColumn Header="Score" Binding="{Binding Number}"/>
                                 <DataGridTextColumn Header="Teacher" Binding="{Binding TeacherName}"/>
                                 <DataGridTextColumn Header="Class Date" Binding="{Binding ClassDate}"/>

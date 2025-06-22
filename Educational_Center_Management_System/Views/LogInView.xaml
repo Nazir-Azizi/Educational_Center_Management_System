@@ -7,7 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              xmlns:conv="clr-namespace:Educational_Center_Management_System.Converters"
-             xmlns:vm="clr-namespace:Educational_Center_Management_System.ViewModels">
+             xmlns:vm="clr-namespace:Educational_Center_Management_System.ViewModels"
+             xmlns:helpers="clr-namespace:Educational_Center_Management_System.Helpers"
+             >
 
     <UserControl.Resources>
         <conv:EnumEqualsConverter x:Key="EnumEqualsConverter"/>
@@ -17,12 +19,12 @@
             
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Label Width="70" Height="35" FontSize="16" HorizontalContentAlignment="Right" Content="ID: "/>
-                <TextBox Width="150" Height="35" FontSize="16" Margin="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <TextBox Text="{Binding IdTextBox}" Width="150" Height="35" FontSize="16" Margin="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxLength="10" PreviewTextInput="TextBox_PreviewTextInput"/>
             </StackPanel>
             
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Label Width="70" Height="35" FontSize="16" HorizontalContentAlignment="Right" Content="Password: "/>
-                <PasswordBox Width="150" Height="35" FontSize="16" Margin="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <PasswordBox helpers:PasswordHelper.BoundPassword="{Binding PasswordBox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150" Height="35" FontSize="16" Margin="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxLength="8"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -37,7 +39,7 @@
                              Converter={StaticResource EnumEqualsConverter},
                              ConverterParameter=Teacher}"/>
                 <RadioButton Content="Student" GroupName="AccessType" FontSize="16"
-                             Margin="10"
+                             Margin="10" 
                              IsChecked="{Binding SelectedUserType,
                              Converter={StaticResource EnumEqualsConverter},
                              ConverterParameter=Student}"/>

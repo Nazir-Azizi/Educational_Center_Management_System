@@ -10,7 +10,16 @@
             <views:LogInView/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:StudentDashboardViewModel}">
-            <views:StudentDashboard/>
+            <views:StudentDashboardView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:TeacherDashboardViewModel}">
+            <views:TeacherDashboardView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:TeacherViewModel}">
+            <views:TeacherView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:TeacherCLassListViewModel}">
+            <views:TeacherCLassListView/>
         </DataTemplate>
     </Application.Resources>
 </Application>

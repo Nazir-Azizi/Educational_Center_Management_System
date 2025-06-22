@@ -18,9 +18,9 @@ namespace Educational_Center_Management_System.Views
     /// <summary>
     /// Interaction logic for StudentDashboard.xaml
     /// </summary>
-    public partial class StudentDashboard : UserControl
+    public partial class StudentDashboardView : UserControl
     {
-        public StudentDashboard()
+        public StudentDashboardView()
         {
             InitializeComponent();
         }

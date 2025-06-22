@@ -11,7 +11,7 @@ namespace Educational_Center_Management_System.DataAccessLayer.Repositories.Teac
         {
             SqlConnection connection = await DatabaseConnectionManager.Instance.GetOpenConnectionAsync();
             string query = "SELECT c.class_id, c.class_state, c.class_semester, c.class_name, "
-                + "c.class_time, c.class_date FROM Classes c JOIN Teachers t ON c.class_teacher = @Id;";
+                + "c.class_time, c.class_date FROM Classes c JOIN Teachers t ON c.class_teacher = t_id WHERE t_id = @Id";
 
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@Id", teacherId);
