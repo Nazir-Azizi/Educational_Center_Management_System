@@ -39,5 +39,12 @@ namespace Educational_Center_Management_System.Test.DateAccessLayer.Repositories
             bool res = await teacherServiceRepository.UpdateScore(score);
             Assert.True(res, "Score is updated successfully");
         }
+        [Fact]
+        public async void GetStudentsOfClass_ShouldReturnStudents_WhenCalled()
+        {
+            TeacherServiceRepository teacherServiceRepository = new TeacherServiceRepository();
+            List<Student> students = await teacherServiceRepository.GetStudentsOfClass(7);
+            Assert.Equal(1, students.Count);
+        }
     }
 }

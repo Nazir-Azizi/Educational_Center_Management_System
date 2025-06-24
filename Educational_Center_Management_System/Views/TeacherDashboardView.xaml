@@ -17,47 +17,17 @@
                 <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Column="0" Margin="20" Grid.RowSpan="2">
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="ID: " VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                    <TextBlock Text="{Binding Teacher.Id}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Name: " VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                    <TextBlock Text="{Binding Teacher.Name}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Last Name: " VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                    <TextBlock Text="{Binding Teacher.LastName}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Father Name : " VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                    <TextBlock Text="{Binding Teacher.Fathername}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Date of Birth: " VerticalAlignment="Center" FontSize="16" Margin="5"/>
-                    <TextBlock Text="{Binding Teacher.BirthDate}" VerticalAlignment="Center" FontSize="16" Margin="5"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Phone Number: " VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                    <TextBlock Text="{Binding Teacher.PhoneNumber}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Join Date: " VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                    <TextBlock Text="{Binding Teacher.JoinDate}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Leave Date: " VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                    <TextBlock Text="{Binding Teacher.LeaveDate}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="State: " VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                    <TextBlock Text="{Binding Teacher.State}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Password: " VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                    <TextBlock Text="{Binding Teacher.Password}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                </StackPanel>
-            </StackPanel>
+            <local:InfoUserControl Text="ID: " Value="{Binding Teacher.Id}"/>
+            <local:InfoUserControl Text="Name: " Value="{Binding Teacher.Name}"/>
+            <local:InfoUserControl Text="Last Name: "  Value="{Binding Teacher.LastName}"/>
+            <local:InfoUserControl Text="Father Name : "  Value="{Binding Teacher.Fathername}"/>
+            <local:InfoUserControl Text="Date of Birth: "  Value="{Binding Teacher.BirthDate}"/>
+            <local:InfoUserControl Text="Phone Number: "  Value="{Binding Teacher.PhoneNumber}"/>
+            <local:InfoUserControl Text="Join Date: "  Value="{Binding Teacher.JoinDate}"/>
+            <local:InfoUserControl Text="Leave Date: " Value="{Binding Teacher.LeaveDate}"/>
+            <local:InfoUserControl Text="State: "  Value="{Binding Teacher.State}"/>
+            <local:InfoUserControl Text="Password: "  Value="{Binding Teacher.Password}"/>
+        </StackPanel>
             
             <Image Grid.Column="1"/>
             

@@ -24,6 +24,7 @@ namespace Educational_Center_Management_System.ViewModels
 
         public ICommand ShowClassList { get; }
         public ICommand ShowDashboard { get; }
+        public ICommand ShowScoreSet { get; }
         private Teacher _teacher;
 
         public TeacherViewModel(Teacher teacher)
@@ -32,6 +33,7 @@ namespace Educational_Center_Management_System.ViewModels
             _currentTeacherViewModel = new TeacherDashboardViewModel(teacher);
             ShowClassList = new RelayCommand(ExecuteShowSeeClasses);
             ShowDashboard = new RelayCommand(ExecuteShowDashboard);
+            ShowScoreSet = new RelayCommand(ExecuteShowScoreSet);
         }
         private void ExecuteShowSeeClasses(object? parameter)
         {
@@ -40,6 +42,10 @@ namespace Educational_Center_Management_System.ViewModels
         private void ExecuteShowDashboard(object? parameter)
         {
             CurrentViewModel = new TeacherDashboardViewModel(_teacher);
+        }
+        private void ExecuteShowScoreSet(object? parameter)
+        {
+            CurrentViewModel = new TeacherScoreSetViewModel(_teacher);
         }
     }
 }

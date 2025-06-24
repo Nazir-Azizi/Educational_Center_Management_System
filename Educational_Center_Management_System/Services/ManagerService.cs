@@ -2,7 +2,7 @@
 using Educational_Center_Management_System.Models;
 using Educational_Center_Management_System.Services.Interfaces;
 
-namespace Educational_Center_Management_System.DataAccessLayer
+namespace Educational_Center_Management_System.Services
 {
     public sealed class ManagerService : IManagerService
     {

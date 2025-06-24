@@ -6,7 +6,33 @@
              xmlns:local="clr-namespace:Educational_Center_Management_System.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+    <Grid Background="White">
+        <ScrollViewer>
+            <StackPanel Orientation="Vertical">
+                <Button Command="{Binding SaveCommand}" Content="Save" Margin="10" Height="25" Width="50" HorizontalAlignment="Right"/>
+                <ItemsControl ItemsSource="{Binding Classes}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Expander Header="{Binding Name}" Margin="5">
+                                <StackPanel Orientation="Vertical">
+                                    <ItemsControl ItemsSource="{Binding ScoreHelpers}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal" Margin="4">
+                                                    <TextBlock Text="{Binding Id}" Margin="5,2,5,2" VerticalAlignment="Center"/>
+                                                    <TextBlock Text="{Binding Name}" Margin="5,2,5,2" VerticalAlignment="Center"/>
+                                                    <TextBlock Text="{Binding LastName}" Margin="5,2,5,2" VerticalAlignment="Center"/>
+                                                    <TextBox Text="{Binding Score, Mode=TwoWay}" VerticalAlignment="Center" Width="40" Margin="5,2,5,2" MaxLength="3" PreviewTextInput="TextBox_PreviewTextInput"/>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+                            </Expander>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>

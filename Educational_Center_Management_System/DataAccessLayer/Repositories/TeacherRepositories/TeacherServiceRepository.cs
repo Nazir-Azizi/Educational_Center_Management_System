@@ -61,5 +61,58 @@ namespace Educational_Center_Management_System.DataAccessLayer.Repositories.Teac
             int rowsEffected = await command.ExecuteNonQueryAsync();
             return rowsEffected > 0;
         }
+        public async Task<List<Student>> GetStudentsOfClass(int classId)
+        {
+            SqlConnection connection = await DatabaseConnectionManager.Instance.GetOpenConnectionAsync();
+            string query = "SELECT st.s_id, st.s_name, st.s_last_name, st.s_father_name, st.s_date_of_birth, "
+                + "st.s_photo, st.s_phone_number, st.s_join_date, st.s_state, st.s_password " 
+                + "FROM StudentClassRelationship "
+                + "JOIN Students st ON StudentClassRelationship.st_id = st.s_id "
+                + "JOIN Classes ON StudentClassRelationship.class_id = Classes.class_id "
+                + "WHERE Classes.class_id = @Id";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@Id", classId);
+            SqlDataReader reader = await command.ExecuteReaderAsync();
+            List<Student> students = new List<Student>();
+
+            while(reader.Read())
+            {
+                students.Add(new Student()
+                {
+                    Id = reader.GetInt32(0),
+                    Name = reader.GetString(1),
+                    LastName = reader.GetString(2),
+                    Fathername = reader.GetString(3),
+                    BirthDate = DateOnly.FromDateTime(reader.GetDateTime(4)),
+                    Photo = reader.IsDBNull(5) ? null : (byte[])reader[5],
+                    PhoneNumber = reader.GetString(6),
+                    JoinDate = DateOnly.FromDateTime(reader.GetDateTime(7)),
+                    State = reader.GetInt32(8),
+                    Password = reader.GetString(9)
+                });
+            }
+            return students;
+        }
+        public async Task<Score?> GetStudentScore(int studentId, int classId)
+        {
+            SqlConnection connection = await DatabaseConnectionManager.Instance.GetOpenConnectionAsync();
+            string query = "SELECT * FROM Scores WHERE class_id = @classId AND st_id = @studentId";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@classId", classId);
+            command.Parameters.AddWithValue("@studentId", studentId);
+            SqlDataReader reader = await command.ExecuteReaderAsync();
+
+            while(reader.Read())
+            {
+                return new Score
+                {
+                    Id = reader.GetInt32(0),
+                    StudentId = reader.GetInt32(1),
+                    ClassId = reader.GetInt32(2),
+                    Number = reader.GetDecimal(3)
+                };
+            }
+            return null;
+        }
     }
 }

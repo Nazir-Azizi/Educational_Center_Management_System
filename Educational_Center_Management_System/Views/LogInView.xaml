@@ -18,13 +18,13 @@
         <StackPanel>
             
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Label Width="70" Height="35" FontSize="16" HorizontalContentAlignment="Right" Content="ID: "/>
+                <Label Width="80" Height="35" FontSize="16" HorizontalContentAlignment="Right" Content="ID: "/>
                 <TextBox Text="{Binding IdTextBox}" Width="150" Height="35" FontSize="16" Margin="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxLength="10" PreviewTextInput="TextBox_PreviewTextInput"/>
             </StackPanel>
             
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Label Width="70" Height="35" FontSize="16" HorizontalContentAlignment="Right" Content="Password: "/>
-                <PasswordBox helpers:PasswordHelper.BoundPassword="{Binding PasswordBox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150" Height="35" FontSize="16" Margin="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxLength="8"/>
+                <Label Width="80" Height="35" FontSize="16" HorizontalContentAlignment="Right" Content="Password: "/>
+                <PasswordBox helpers:PasswordHelper.BoundPassword="{Binding PasswordBox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150" Height="35" FontSize="16" Margin="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxLength="10"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">

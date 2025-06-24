@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Educational_Center_Management_System.Models
 {
@@ -15,5 +17,6 @@ namespace Educational_Center_Management_System.Models
         public string Name { get; init; }
         public TimeSpan Time { get; init; }
         public DateOnly Date { get; init; }
+        public ObservableCollection<ScoreHelper> ScoreHelpers { get; set; }
     }
 }

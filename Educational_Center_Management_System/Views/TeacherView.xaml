@@ -11,8 +11,7 @@
             <StackPanel Orientation="Vertical" Background="White" Width="100">
                 <Button Content="Dashboard" Command="{Binding ShowDashboard}" Height="25" Margin="10"/>
                 <Button Content="See Classes" Command="{Binding ShowClassList}" Height="25" Margin="10"/>
-                <Button Content="Set Score" Height="25" Margin="10"/>
-                <Button Content="Update Score" Height="25" Margin="10"/>
+                <Button Content="Set Score" Command="{Binding ShowScoreSet}" Height="25" Margin="10"/>
             </StackPanel>
 
         </Border>

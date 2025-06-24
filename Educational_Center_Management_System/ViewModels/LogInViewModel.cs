@@ -1,5 +1,6 @@
 ﻿using Educational_Center_Management_System.Enums;
 using Educational_Center_Management_System.Services.Interfaces;
+using Educational_Center_Management_System.Services;
 using System.Windows.Input;
 using Educational_Center_Management_System.Helpers;
 using Educational_Center_Management_System.Models;
@@ -11,7 +12,7 @@ namespace Educational_Center_Management_System.ViewModels
 {
     internal class LogInViewModel : BaseViewModel
     {
-
+        IManagerService _managerService;
         private string _idTextBox;
 
         public string IdTextBox
@@ -38,13 +39,14 @@ namespace Educational_Center_Management_System.ViewModels
 				onPropertyChanged();
 			}
 		}
-
         public ICommand LogInCommnad { get; }
 
 
 		INavigationService _navigationService;
+
         public LogInViewModel(INavigationService navigationService)
         {
+            _managerService = new ManagerService();
             _navigationService = navigationService;
             LogInCommnad = new RelayCommand(ExecuteLogIn);
         }
@@ -55,8 +57,7 @@ namespace Educational_Center_Management_System.ViewModels
             {
                 if(SelectedUserType == UserType.Student)
                 {
-                    StudentManagerService studentManagerService = new StudentManagerService();
-                    Student student = await studentManagerService.GetStudent(int.Parse(IdTextBox));
+                    Student student = await _managerService.GetStudent(int.Parse(IdTextBox));
                     if (student == null || student.Password != PasswordBox)
                     {
                         MessageBox.Show("Wrong Id or password");
@@ -68,21 +69,15 @@ namespace Educational_Center_Management_System.ViewModels
                 }
                 else if (SelectedUserType == UserType.Teacher)
                 {
-                    Teacher teacher = new Teacher
+                    Teacher teacher = await _managerService.GetTeacher(int.Parse(IdTextBox));
+                    if (teacher == null || teacher.Password != PasswordBox)
                     {
-                        Id = 1,
-                        Name = "Nazir",
-                        LastName = "Azizi",
-                        Fathername = "Mohammad Aziz",
-                        BirthDate = new DateOnly(2003, 1, 19),
-                        Photo = null,
-                        PhoneNumber = "0783360601",
-                        JoinDate = new DateOnly(2010, 9, 1),
-                        LeaveDate = new DateOnly(2024, 9, 16),
-                        State = 1,
-                        Password = "iamteacher123"
-                    };
-                    _navigationService.NavigateTo(new TeacherViewModel(teacher));
+                        MessageBox.Show("Wrong Id or password");
+                    }
+                    else
+                    {
+                        _navigationService.NavigateTo(new TeacherViewModel(teacher));
+                    }
                 }
             }
             else

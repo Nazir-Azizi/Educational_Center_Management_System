@@ -17,45 +17,16 @@
         </Grid.RowDefinitions>
         <Border Margin="5" BorderBrush="Black" CornerRadius="5" BorderThickness="1"
                  Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
-            <StackPanel
-                    Margin="20">
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="ID: " VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                    <TextBlock Text="{Binding Student.Id}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Name: " VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                    <TextBlock Text="{Binding Student.Name}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Last Name: " VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                    <TextBlock Text="{Binding Student.LastName}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Father Name : " VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                    <TextBlock Text="{Binding Student.Fathername}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Date of Birth: " VerticalAlignment="Center" FontSize="16" Margin="5"/>
-                    <TextBlock Text="{Binding Student.BirthDate}" VerticalAlignment="Center" FontSize="16" Margin="5"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Phone Number: " VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                    <TextBlock Text="{Binding Student.PhoneNumber}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Join Date: " VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                    <TextBlock Text="{Binding Student.JoinDate}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="State: " VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                    <TextBlock Text="{Binding Student.State}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Password: " VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                    <TextBlock Text="{Binding Student.Password}" VerticalAlignment="Center" FontSize="16" Margin="3"/>
-                </StackPanel>
-
+            <StackPanel Margin="20">
+                <local:InfoUserControl Text="ID: " Value="{Binding Student.Id}"/>
+                <local:InfoUserControl Text="Name: " Value="{Binding Student.Name}"/>
+                <local:InfoUserControl Text="Last Name: "  Value="{Binding Student.LastName}"/>
+                <local:InfoUserControl Text="Father Name : "  Value="{Binding Student.Fathername}"/>
+                <local:InfoUserControl Text="Date of Birth: "  Value="{Binding Student.BirthDate}"/>
+                <local:InfoUserControl Text="Phone Number: "  Value="{Binding Student.PhoneNumber}"/>
+                <local:InfoUserControl Text="Join Date: "  Value="{Binding Student.JoinDate}"/>
+                <local:InfoUserControl Text="State: "  Value="{Binding Student.State}"/>
+                <local:InfoUserControl Text="Password: "  Value="{Binding Student.Password}"/>
             </StackPanel>
         </Border>
         <Image Grid.Column="1" Grid.Row="0" Source="{Binding Student.Photo}"/>
