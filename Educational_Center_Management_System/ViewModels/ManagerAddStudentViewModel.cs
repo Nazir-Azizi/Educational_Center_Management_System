@@ -15,7 +15,7 @@ namespace Educational_Center_Management_System.ViewModels
 {
     public class ManagerAddStudentViewModel
     {
-        IManagerService _managerService;
+        private IManagerService _managerService;
         public Student Student { get; set; } = new Student();
         public DateTime? BirthDate { get; set; }
         public DateTime? JoinDate { get; set; }
