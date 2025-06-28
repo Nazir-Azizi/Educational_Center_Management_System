@@ -20,7 +20,7 @@ namespace Educational_Center_Management_System.Test.DateAccessLayer.Repositories
             {
                 StudentId = 1,
                 ClassId = 7,
-                Number = 80.4
+                Number = 80.4M
             };
             bool res = await teacherServiceRepository.SetScore(score);
             Assert.True(res, "Score is set successfully");
@@ -34,7 +34,7 @@ namespace Educational_Center_Management_System.Test.DateAccessLayer.Repositories
                 Id = 2,
                 StudentId = 1,
                 ClassId = 7,
-                Number = 80.4
+                Number = 80.4M
             };
             bool res = await teacherServiceRepository.UpdateScore(score);
             Assert.True(res, "Score is updated successfully");

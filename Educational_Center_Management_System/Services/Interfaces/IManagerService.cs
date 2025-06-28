@@ -1,6 +1,5 @@
 ﻿using Educational_Center_Management_System.Models;
 
-
 namespace Educational_Center_Management_System.Services.Interfaces
 {
     internal interface IManagerService
@@ -18,5 +17,7 @@ namespace Educational_Center_Management_System.Services.Interfaces
         public Task<bool> CreateClass(Class newClass);
         public Task<bool> DeleteClass(int classId);
         public Task<bool> UpdateClass(Class updatedClass);
+        public Task<Manager?> GetManager();
+        public Task<bool> UpdataManager(Manager manager);
     }
 }

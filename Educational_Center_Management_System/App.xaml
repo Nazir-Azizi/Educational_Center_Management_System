@@ -24,5 +24,14 @@
         <DataTemplate DataType="{x:Type vm:TeacherScoreSetViewModel}">
             <views:TeacherScoreSetView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ManagerViewModel}">
+            <views:ManagerView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ManagerDashboardViewModel}">
+            <views:ManagerDashboardView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ManagerAddStudentViewModel}">
+            <views:ManagerAddStudentView/>
+        </DataTemplate>
     </Application.Resources>
 </Application>

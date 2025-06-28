@@ -57,7 +57,7 @@ namespace Educational_Center_Management_System.ViewModels
             {
                 if(SelectedUserType == UserType.Student)
                 {
-                    Student student = await _managerService.GetStudent(int.Parse(IdTextBox));
+                    Student? student = await _managerService.GetStudent(int.Parse(IdTextBox));
                     if (student == null || student.Password != PasswordBox)
                     {
                         MessageBox.Show("Wrong Id or password");
@@ -69,7 +69,7 @@ namespace Educational_Center_Management_System.ViewModels
                 }
                 else if (SelectedUserType == UserType.Teacher)
                 {
-                    Teacher teacher = await _managerService.GetTeacher(int.Parse(IdTextBox));
+                    Teacher? teacher = await _managerService.GetTeacher(int.Parse(IdTextBox));
                     if (teacher == null || teacher.Password != PasswordBox)
                     {
                         MessageBox.Show("Wrong Id or password");
@@ -77,6 +77,18 @@ namespace Educational_Center_Management_System.ViewModels
                     else
                     {
                         _navigationService.NavigateTo(new TeacherViewModel(teacher));
+                    }
+                }
+                else
+                {
+                    Manager? manager = await _managerService.GetManager();
+                    if (manager == null || manager.Password != PasswordBox)
+                    {
+                        MessageBox.Show("Wrong Id or password");
+                    }
+                    else
+                    {
+                        _navigationService.NavigateTo(new ManagerViewModel(manager));
                     }
                 }
             }

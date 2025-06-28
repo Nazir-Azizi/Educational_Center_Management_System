@@ -9,13 +9,14 @@ namespace Educational_Center_Management_System.Services
         private readonly StudentManagerService _studentManagerService;
         private readonly TeacherManagerService _teacherManagerService;
         private readonly ClassManagerService _classManagerService;
-
+        private readonly ManagerDAO _managerDAO;
 
         public ManagerService()
         {
             _studentManagerService = new StudentManagerService();
             _teacherManagerService = new TeacherManagerService();
             _classManagerService = new ClassManagerService();
+            _managerDAO = new ManagerDAO();
         }
 
         public Task<bool> DelelteStudent(int studentId)
@@ -81,6 +82,16 @@ namespace Educational_Center_Management_System.Services
         public Task<bool> UpdateTeacher(Teacher teacher)
         {
             return _teacherManagerService.UpdateTeacher(teacher);
+        }
+
+        public Task<Manager?> GetManager()
+        {
+            return _managerDAO.GetManager();   
+        }
+
+        public Task<bool> UpdataManager(Manager manager)
+        {
+            return _managerDAO.UpdataManager(manager);
         }
     }
 }
