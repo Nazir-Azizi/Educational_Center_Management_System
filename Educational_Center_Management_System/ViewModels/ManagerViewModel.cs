@@ -23,31 +23,40 @@ namespace Educational_Center_Management_System.ViewModels
         }
         Manager Manager { get; set; }
         public ICommand ShowDashboard { get; set; }
-        public ICommand ShowAddStudent { get; set; }
-        public ICommand ShowAllStudents { get; set; }
-        public ICommand ShowSearchStudents { get; set; } // to be implemented
+        public ICommand ShowAdd { get; set; }
+        public ICommand ShowAll { get; set; }
+        public ICommand ShowSearch { get; set; }
+        public ICommand ShowUpdateStudent { get; set; }
 
         public ManagerViewModel(Manager manager)
         {
             Manager = manager;
             CurrentViewModel = new ManagerDashboardViewModel(Manager);
             ShowDashboard = new RelayCommand(ExecuteShowDashboard);
-            ShowAddStudent = new RelayCommand(ExecuteShowAddStudent);
-            ShowAllStudents = new RelayCommand(ExecuteShowAllStudents);
+            ShowAdd = new RelayCommand(ExecuteShowAdd);
+            ShowAll = new RelayCommand(ExecuteShowAll);
+            ShowSearch = new RelayCommand(ExecuteShowSearch);
+            ShowUpdateStudent = new RelayCommand(ExecuteShowUpdateStudent);
         }
         private void ExecuteShowDashboard(object? parameter)
         {
             CurrentViewModel = new ManagerDashboardViewModel(Manager);
         }
-        private void ExecuteShowAddStudent(object? parameter)
+        private void ExecuteShowAdd(object? parameter)
         {
-            CurrentViewModel = new ManagerAddStudentViewModel();
+            CurrentViewModel = new ManagerAddViewModel();
         }
-        private void ExecuteShowAllStudents(object? parameter)
+        private void ExecuteShowAll(object? parameter)
         {
             CurrentViewModel = new ManagerAllStudentsViewModel();
         }
-
-
+        private void ExecuteShowSearch(object? parameter)
+        {
+            CurrentViewModel = new ManagerSearchViewModel();
+        }
+        private void ExecuteShowUpdateStudent(object? parameter)
+        {
+            CurrentViewModel = new ManagerUpdateStudentViewModel();
+        }
     }
 }

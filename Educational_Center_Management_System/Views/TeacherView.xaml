@@ -9,9 +9,9 @@
     <DockPanel Background="White">
         <Border DockPanel.Dock="Left" BorderThickness="1" Margin="10" BorderBrush="Black">
             <StackPanel Orientation="Vertical" Background="White" Width="100">
-                <Button Content="Dashboard" Command="{Binding ShowDashboard}" Height="25" Margin="10"/>
-                <Button Content="See Classes" Command="{Binding ShowClassList}" Height="25" Margin="10"/>
-                <Button Content="Set Score" Command="{Binding ShowScoreSet}" Height="25" Margin="10"/>
+                <Button Content="Dashboard" Command="{Binding ShowDashboard}" Height="25" Margin="5"/>
+                <Button Content="See Classes" Command="{Binding ShowClassList}" Height="25" Margin="5"/>
+                <Button Content="Set Score" Command="{Binding ShowScoreSet}" Height="25" Margin="5"/>
             </StackPanel>
 
         </Border>

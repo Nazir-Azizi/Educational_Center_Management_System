@@ -1,4 +1,5 @@
-﻿using Educational_Center_Management_System.Helpers;
+﻿using Educational_Center_Management_System.Enums;
+using Educational_Center_Management_System.Helpers;
 using Educational_Center_Management_System.Models;
 using Educational_Center_Management_System.Services;
 using Educational_Center_Management_System.Services.Interfaces;
@@ -13,7 +14,7 @@ using System.Windows.Input;
 
 namespace Educational_Center_Management_System.ViewModels
 {
-    public class ManagerAddStudentViewModel
+    public class ManagerAddViewModel : BaseViewModel
     {
         private IManagerService _managerService;
         public Student Student { get; set; } = new Student();
@@ -21,7 +22,17 @@ namespace Educational_Center_Management_System.ViewModels
         public DateTime? JoinDate { get; set; }
         public ICommand AddPhotoCommand { get; set; }
         public ICommand SubmitCommand { get; set; }
-        public ManagerAddStudentViewModel()
+        private UserType _selectedUserType = UserType.Student;
+        public UserType SelectedUserType
+        {
+            get { return _selectedUserType; }
+            set
+            {
+                _selectedUserType = value;
+                onPropertyChanged();
+            }
+        }
+        public ManagerAddViewModel()
         {
             AddPhotoCommand = new RelayCommand(ExecuteAddPhotoCommand);
             SubmitCommand = new RelayCommand(ExecuteSubmitCommand);
@@ -50,8 +61,25 @@ namespace Educational_Center_Management_System.ViewModels
             {
                 Student.BirthDate = (DateOnly)birthDate;
                 Student.JoinDate = (DateOnly)joinDate;
-                bool res = await _managerService.AddStudent(Student);
-                MessageBox.Show(res ? "Student added Successfuly" : "There was an error");
+                if (SelectedUserType == UserType.Student)
+                {
+                    bool res = await _managerService.AddStudent(Student);
+                    MessageBox.Show(res ? "Student added Successfuly" : "There was an error");
+                }
+                else
+                {
+                    Teacher teacher = new Teacher();
+                    teacher.Name = Student.Name;
+                    teacher.LastName = Student.LastName;
+                    teacher.Fathername = Student.Fathername;
+                    teacher.BirthDate = Student.BirthDate;
+                    teacher.PhoneNumber = Student.PhoneNumber;
+                    teacher.JoinDate = Student.JoinDate;
+                    teacher.State = Student.State;
+                    teacher.Password = Student.Password;
+                    bool res = await _managerService.AddTeacher(teacher);
+                    MessageBox.Show(res ? "Teacher added Successfuly" : "There was an error");
+                }
             }
         }
 

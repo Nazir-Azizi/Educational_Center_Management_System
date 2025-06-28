@@ -19,7 +19,7 @@ namespace Educational_Center_Management_System.DataAccessLayer.Repositories.Mana
             parameter.Value = (object?)teacher.Photo ?? DBNull.Value; // Handle null photo
             command.Parameters.AddWithValue("@PhoneNumber", teacher.PhoneNumber);
             command.Parameters.AddWithValue("@JoinDate", teacher.JoinDate.ToDateTime(TimeOnly.MinValue));
-            command.Parameters.AddWithValue("@LeaveDate", teacher.LeaveDate.ToDateTime(TimeOnly.MinValue));
+            command.Parameters.AddWithValue("@LeaveDate", DBNull.Value);
             command.Parameters.AddWithValue("@State", teacher.State);
             command.Parameters.AddWithValue("@Password", teacher.Password);
 
@@ -53,7 +53,7 @@ namespace Educational_Center_Management_System.DataAccessLayer.Repositories.Mana
             parameter.Value = (object?)UpdatedTeacher.Photo ?? DBNull.Value; // Handle null photo
             command.Parameters.AddWithValue("@PhoneNumber", UpdatedTeacher.PhoneNumber);
             command.Parameters.AddWithValue("@JoinDate", UpdatedTeacher.JoinDate.ToDateTime(TimeOnly.MinValue));
-            command.Parameters.AddWithValue("@LeaveDate", UpdatedTeacher.LeaveDate.ToDateTime(TimeOnly.MinValue));
+            command.Parameters.AddWithValue("@LeaveDate", DBNull.Value);
             command.Parameters.AddWithValue("@State", UpdatedTeacher.State);
             command.Parameters.AddWithValue("@Password", UpdatedTeacher.Password);
 
@@ -80,7 +80,7 @@ namespace Educational_Center_Management_System.DataAccessLayer.Repositories.Mana
                     Photo = reader.IsDBNull(5) ? null : (byte[])reader[5],
                     PhoneNumber = reader.GetString(6),
                     JoinDate = DateOnly.FromDateTime(reader.GetDateTime(7)),
-                    LeaveDate = DateOnly.FromDateTime(reader.GetDateTime(8)),
+                    LeaveDate = reader.IsDBNull(8) ? null : DateOnly.FromDateTime(reader.GetDateTime(8)),
                     State = reader.GetInt32(9),
                     Password = reader.GetString(10)
                 };

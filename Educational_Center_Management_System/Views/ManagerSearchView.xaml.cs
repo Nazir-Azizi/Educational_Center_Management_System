@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Educational_Center_Management_System.Views
 {
     /// <summary>
-    /// Interaction logic for ManagerAddStudent.xaml
+    /// Interaction logic for ManagerSearchStudentView.xaml
     /// </summary>
-    public partial class ManagerAddStudentView : UserControl
+    public partial class ManagerSearchView : UserControl
     {
-        public ManagerAddStudentView()
+        public ManagerSearchView()
         {
             InitializeComponent();
         }

@@ -30,11 +30,17 @@
         <DataTemplate DataType="{x:Type vm:ManagerDashboardViewModel}">
             <views:ManagerDashboardView/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:ManagerAddStudentViewModel}">
-            <views:ManagerAddStudentView/>
+        <DataTemplate DataType="{x:Type vm:ManagerAddViewModel}">
+            <views:ManagerAddView/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:ManagerAllStudentsViewModel}">
             <views:ManagerAllStudentsView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ManagerSearchViewModel}">
+            <views:ManagerSearchView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ManagerUpdateStudentViewModel}">
+            <views:ManagerUpdateStudentView/>
         </DataTemplate>
     </Application.Resources>
 </Application>

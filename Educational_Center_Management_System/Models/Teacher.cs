@@ -16,7 +16,7 @@ namespace Educational_Center_Management_System.Models
         public byte[]? Photo { get; set; }
         public string PhoneNumber { get; set; }
         public DateOnly JoinDate { get; set; }
-        public DateOnly LeaveDate { get; set; }
+        public DateOnly? LeaveDate { get; set; }
         public int State { get; set; }
         public string Password { get; set; }
     }

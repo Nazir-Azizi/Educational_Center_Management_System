@@ -9,10 +9,11 @@
     <DockPanel Background="White">
         <Border DockPanel.Dock="Left" BorderThickness="1" Margin="10" BorderBrush="Black">
             <StackPanel Orientation="Vertical" Background="White" Width="100">
-                <Button Content="Dashboard" Command="{Binding ShowDashboard}" Height="25" Margin="10"/>
-                <Button Content="Add Student" Command="{Binding ShowAddStudent}" Height="25" Margin="10"/>
-                <Button Content="View All Students" Command="{Binding ShowAllStudents}" Height="25" Margin="10"/>
-                <Button Content="Search Students" Command="{Binding ShowSearchStudents}" Height="25" Margin="10"/>
+                <Button Content="Dashboard" Command="{Binding ShowDashboard}" Height="25" Margin="5"/>
+                <Button Content="Add" Command="{Binding ShowAdd}" Height="25" Margin="5"/>
+                <Button Content="View Students" Command="{Binding ShowAll}" Height="25" Margin="5"/>
+                <Button Content="Search" Command="{Binding ShowSearch}" Height="25" Margin="5"/>
+                <Button Content="Update Students" Command="{Binding ShowUpdateStudent}" Height="25" Margin="5"/>
             </StackPanel>
 
         </Border>
