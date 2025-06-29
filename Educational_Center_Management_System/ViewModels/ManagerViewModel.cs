@@ -26,9 +26,9 @@ namespace Educational_Center_Management_System.ViewModels
         public ICommand ShowAdd { get; set; }
         public ICommand ShowAll { get; set; }
         public ICommand ShowSearch { get; set; }
-        public ICommand ShowUpdateStudent { get; set; }
-        public ICommand ShowUpdateTeacher { get; set; }
-
+        public ICommand ShowUpdate { get; set; }
+        public ICommand ShowClass { get; set; }
+        public ICommand ShowSettings { get; set; }
         public ManagerViewModel(Manager manager)
         {
             Manager = manager;
@@ -37,8 +37,9 @@ namespace Educational_Center_Management_System.ViewModels
             ShowAdd = new RelayCommand(ExecuteShowAdd);
             ShowAll = new RelayCommand(ExecuteShowAll);
             ShowSearch = new RelayCommand(ExecuteShowSearch);
-            ShowUpdateStudent = new RelayCommand(ExecuteShowUpdateStudent);
-            ShowUpdateTeacher = new RelayCommand(ExecuteShowUpdateTeacher);
+            ShowUpdate = new RelayCommand(ExecuteShowUpdate);
+            ShowClass = new RelayCommand(ExecuteShowClass);
+            ShowSettings = new RelayCommand(ExecuteShowSettings);
         }
         private void ExecuteShowDashboard(object? parameter)
         {
@@ -56,13 +57,17 @@ namespace Educational_Center_Management_System.ViewModels
         {
             CurrentViewModel = new ManagerSearchViewModel();
         }
-        private void ExecuteShowUpdateStudent(object? parameter)
+        private void ExecuteShowUpdate(object? parameter)
         {
-            CurrentViewModel = new ManagerUpdateStudentViewModel();
+            CurrentViewModel = new ManagerUpdateViewModel();
         }
-        private void ExecuteShowUpdateTeacher(object? parameter)
+        private void ExecuteShowClass(object? parameter)
         {
-            CurrentViewModel = new ManagerUpdateTeacherViewModel();
+            CurrentViewModel = new ManagerClassViewModel();
+        }
+        private void ExecuteShowSettings(object? parameter)
+        {
+            CurrentViewModel = new ManagerSettingViewModel();
         }
     }
 }

@@ -8,14 +8,21 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel Background="White">
         <Border DockPanel.Dock="Left" BorderThickness="1" Margin="10" BorderBrush="Black">
-            <StackPanel Orientation="Vertical" Background="White" Width="100">
-                <Button Content="Dashboard" Command="{Binding ShowDashboard}" Height="25" Margin="5"/>
-                <Button Content="Add" Command="{Binding ShowAdd}" Height="25" Margin="5"/>
-                <Button Content="View" Command="{Binding ShowAll}" Height="25" Margin="5"/>
-                <Button Content="Search" Command="{Binding ShowSearch}" Height="25" Margin="5"/>
-                <Button Content="Update Students" Command="{Binding ShowUpdateStudent}" Height="25" Margin="5"/>
-                <Button Content="Update Teacher" Command="{Binding ShowUpdateTeacher}" Height="25" Margin="5"/>
-            </StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="11*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Vertical" Background="White" Width="100">
+                    <Button Content="Dashboard" Command="{Binding ShowDashboard}" Height="25" Margin="5"/>
+                    <Button Content="Add" Command="{Binding ShowAdd}" Height="25" Margin="5"/>
+                    <Button Content="View" Command="{Binding ShowAll}" Height="25" Margin="5"/>
+                    <Button Content="Search" Command="{Binding ShowSearch}" Height="25" Margin="5"/>
+                    <Button Content="Update" Command="{Binding ShowUpdate}" Height="25" Margin="5"/>
+                    <Button Content="Class" Command="{Binding ShowClass}" Height="25" Margin="5"/>
+                </StackPanel>
+                <Button Grid.Row="1" Content="Settings" Command="{Binding ShowSettings}" Height="25" Margin="5"/>
+            </Grid>
 
         </Border>
         <Grid>

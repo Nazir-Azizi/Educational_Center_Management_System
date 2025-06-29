@@ -37,10 +37,11 @@ namespace Educational_Center_Management_System.Test.DateAccessLayer.Repositories
             ClassManagerService classManagerService = new ClassManagerService();
             var updatedClass = new Class
             {
+                Id = 10,
                 State = 1,
                 Teacher = 1,
-                Semester = "C",
-                Name = "Advance",
+                Semester = "A",
+                Name = "A",
                 Time = new TimeSpan(10,0,0),
                 Date = new DateOnly(2025, 9, 1)
             };

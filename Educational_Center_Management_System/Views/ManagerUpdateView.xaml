@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="Educational_Center_Management_System.Views.ManagerUpdateView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Educational_Center_Management_System.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             xmlns:helpers="clr-namespace:Educational_Center_Management_System.Helpers"
+             xmlns:conv="clr-namespace:Educational_Center_Management_System.Converters"
+             >
+    <UserControl.Resources>
+        <conv:EnumEqualsConverter x:Key="EnumEqualsConverter"/>
+    </UserControl.Resources>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Content="Student" GroupName="AccessType" FontSize="16"
+             Margin="10"
+             IsChecked="{Binding SelectedUserType,
+             Converter={StaticResource EnumEqualsConverter},
+             ConverterParameter=Student}"/>
+            <RadioButton Content="Teacher" GroupName="AccessType" FontSize="16"
+             Margin="10"
+             IsChecked="{Binding SelectedUserType,
+             Converter={StaticResource EnumEqualsConverter},
+             ConverterParameter=Teacher}"/>
+            <Button Content="Open" Command="{Binding ShowUpdatePage}" Width="100"/>
+        </StackPanel>
+        <ContentControl Grid.Row="1" Content="{Binding CurrentViewModel}"/>
+    </Grid>
+</UserControl>

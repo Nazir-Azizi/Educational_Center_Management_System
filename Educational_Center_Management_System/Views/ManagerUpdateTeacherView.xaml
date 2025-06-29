@@ -11,7 +11,7 @@
             <ScrollViewer>
 
                 <StackPanel HorizontalAlignment="Center">
-                    <Label Content="Update student using ID"/>
+                    <Label Content="Update teacher using ID"/>
                     <local:GetInfoUserControl Text="ID: " Value="{Binding Teacher.Id, Mode=OneWayToSource}"/>
                     <local:GetInfoUserControl Text="Name: " Value="{Binding Teacher.Name, Mode=OneWayToSource}"/>
                     <local:GetInfoUserControl Text="Last Name: " Value="{Binding Teacher.LastName, Mode=OneWayToSource}"/>

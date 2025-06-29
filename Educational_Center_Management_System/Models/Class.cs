@@ -10,13 +10,13 @@ namespace Educational_Center_Management_System.Models
 {
     public record class Class
     {
-        public int Id { get; init; }
-        public int State { get; init; }
-        public int Teacher { get; init; }
-        public string Semester { get; init; }
-        public string Name { get; init; }
-        public TimeSpan Time { get; init; }
-        public DateOnly Date { get; init; }
+        public int Id { get; set; }
+        public int State { get; set; }
+        public int Teacher { get; set; }
+        public string Semester { get; set; }
+        public string Name { get; set; }
+        public TimeSpan Time { get; set; }
+        public DateOnly Date { get; set; }
         public ObservableCollection<ScoreHelper> ScoreHelpers { get; set; }
     }
 }

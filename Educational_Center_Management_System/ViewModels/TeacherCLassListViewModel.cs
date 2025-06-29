@@ -15,7 +15,7 @@ namespace Educational_Center_Management_System.ViewModels
             _teacher = teacher;
             _teacherService = new TeacherService();
             Classes = new ObservableCollection<Class>();
-            getListOfClasses();
+            _ = getListOfClasses();
         }
         private async Task getListOfClasses()
         {

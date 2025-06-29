@@ -34,7 +34,7 @@ namespace Educational_Center_Management_System.DataAccessLayer.Repositories.Mana
         }
         public async Task<bool> UpdateClass(Class updatedClass)
         {
-            using SqlConnection connection = DatabaseConnectionManager.Instance.GetOpenConnectionAsync().Result;
+            using SqlConnection connection = await DatabaseConnectionManager.Instance.GetOpenConnectionAsync();
             string query = "UPDATE Classes SET class_state = @ClassState, class_teacher = @ClassTeacher, " +
                            "class_semester = @ClassSemester, class_name = @ClassName, class_time = @ClassTime, " +
                            "class_date = @ClassDate WHERE class_id = @ClassId";

@@ -14,10 +14,10 @@ namespace Educational_Center_Management_System.Services.Interfaces
         public Task<bool> UpdateTeacher(Teacher teacher); // done
         public Task<Teacher?> GetTeacher(int teacherId); // done
         public Task<List<Teacher?>> GetAllTeachers(); // done
-        public Task<bool> CreateClass(Class newClass);
-        public Task<bool> DeleteClass(int classId);
-        public Task<bool> UpdateClass(Class updatedClass);
+        public Task<bool> CreateClass(Class newClass); // done
+        public Task<bool> DeleteClass(int classId); // not needed
+        public Task<bool> UpdateClass(Class updatedClass); // done
         public Task<Manager?> GetManager(); // done
-        public Task<bool> UpdataManager(Manager manager);
+        public Task<bool> UpdataManager(Manager manager); 
     }
 }

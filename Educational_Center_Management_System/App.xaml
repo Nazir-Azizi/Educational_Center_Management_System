@@ -51,5 +51,20 @@
         <DataTemplate DataType="{x:Type vm:ManagerViewAllViewModel}">
             <views:ManagerViewAllView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ManagerUpdateViewModel}">
+            <views:ManagerUpdateView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ManagerClassViewModel}">
+            <views:ManagerClassView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ManagerCreateClassViewModel}">
+            <views:ManagerCreateClassView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ManagerUpdateClassViewModel}">
+            <views:ManagerUpdateClassView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ManagerSettingViewModel}">
+            <views:ManagerSettingView/>
+        </DataTemplate>
     </Application.Resources>
 </Application>
