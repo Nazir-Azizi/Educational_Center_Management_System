@@ -16,7 +16,6 @@ namespace Educational_Center_Management_System.ViewModels
 {
     public class ManagerAllStudentsViewModel
     {
-        public String IdDelete { get; set; }
         private IManagerService _managerService;
         public ObservableCollection<Student> Students { get; set; } = new ObservableCollection<Student>();
         public ManagerAllStudentsViewModel()

@@ -11,9 +11,10 @@
             <StackPanel Orientation="Vertical" Background="White" Width="100">
                 <Button Content="Dashboard" Command="{Binding ShowDashboard}" Height="25" Margin="5"/>
                 <Button Content="Add" Command="{Binding ShowAdd}" Height="25" Margin="5"/>
-                <Button Content="View Students" Command="{Binding ShowAll}" Height="25" Margin="5"/>
+                <Button Content="View" Command="{Binding ShowAll}" Height="25" Margin="5"/>
                 <Button Content="Search" Command="{Binding ShowSearch}" Height="25" Margin="5"/>
                 <Button Content="Update Students" Command="{Binding ShowUpdateStudent}" Height="25" Margin="5"/>
+                <Button Content="Update Teacher" Command="{Binding ShowUpdateTeacher}" Height="25" Margin="5"/>
             </StackPanel>
 
         </Border>

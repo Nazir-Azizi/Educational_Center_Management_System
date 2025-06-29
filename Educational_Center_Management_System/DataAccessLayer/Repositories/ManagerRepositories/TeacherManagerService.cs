@@ -106,7 +106,7 @@ namespace Educational_Center_Management_System.DataAccessLayer.Repositories.Mana
                     Photo = reader.IsDBNull(5) ? null : (byte[])reader[5],
                     PhoneNumber = reader.GetString(6),
                     JoinDate = DateOnly.FromDateTime(reader.GetDateTime(7)),
-                    LeaveDate = DateOnly.FromDateTime(reader.GetDateTime(8)),
+                    LeaveDate = reader.IsDBNull(8) ? null : DateOnly.FromDateTime(reader.GetDateTime(8)),
                     State = reader.GetInt32(9),
                     Password = reader.GetString(10)
                 });

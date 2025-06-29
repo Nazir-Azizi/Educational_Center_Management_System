@@ -27,6 +27,7 @@ namespace Educational_Center_Management_System.ViewModels
         public ICommand ShowAll { get; set; }
         public ICommand ShowSearch { get; set; }
         public ICommand ShowUpdateStudent { get; set; }
+        public ICommand ShowUpdateTeacher { get; set; }
 
         public ManagerViewModel(Manager manager)
         {
@@ -37,6 +38,7 @@ namespace Educational_Center_Management_System.ViewModels
             ShowAll = new RelayCommand(ExecuteShowAll);
             ShowSearch = new RelayCommand(ExecuteShowSearch);
             ShowUpdateStudent = new RelayCommand(ExecuteShowUpdateStudent);
+            ShowUpdateTeacher = new RelayCommand(ExecuteShowUpdateTeacher);
         }
         private void ExecuteShowDashboard(object? parameter)
         {
@@ -48,7 +50,7 @@ namespace Educational_Center_Management_System.ViewModels
         }
         private void ExecuteShowAll(object? parameter)
         {
-            CurrentViewModel = new ManagerAllStudentsViewModel();
+            CurrentViewModel = new ManagerViewAllViewModel();
         }
         private void ExecuteShowSearch(object? parameter)
         {
@@ -57,6 +59,10 @@ namespace Educational_Center_Management_System.ViewModels
         private void ExecuteShowUpdateStudent(object? parameter)
         {
             CurrentViewModel = new ManagerUpdateStudentViewModel();
+        }
+        private void ExecuteShowUpdateTeacher(object? parameter)
+        {
+            CurrentViewModel = new ManagerUpdateTeacherViewModel();
         }
     }
 }

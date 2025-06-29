@@ -42,5 +42,14 @@
         <DataTemplate DataType="{x:Type vm:ManagerUpdateStudentViewModel}">
             <views:ManagerUpdateStudentView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ManagerUpdateTeacherViewModel}">
+            <views:ManagerUpdateTeacherView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ManagerAllTeachersViewModel}">
+            <views:ManagerAllTeachersView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ManagerViewAllViewModel}">
+            <views:ManagerViewAllView/>
+        </DataTemplate>
     </Application.Resources>
 </Application>
