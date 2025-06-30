@@ -8,7 +8,13 @@
         xmlns:views="clr-namespace:Educational_Center_Management_System.Views"
         mc:Ignorable="d"
         Title="Educational Management System" Height="450" Width="800">
-    <Grid>
+
+    <DockPanel Background="White">
+        <StackPanel DockPanel.Dock="Top">
+            <Button Command="{Binding GoToHomePageCommand}" Content="Home" Width="60" Height="20" HorizontalAlignment="Left"/>
+        </StackPanel>
         <ContentControl Content="{Binding CurrentViewModel}"/>
-    </Grid>
+        
+    </DockPanel>    
+    
 </Window>

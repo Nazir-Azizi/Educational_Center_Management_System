@@ -3,6 +3,7 @@ using Educational_Center_Management_System.Models;
 using Educational_Center_Management_System.Services;
 using Educational_Center_Management_System.Services.Interfaces;
 using Microsoft.IdentityModel.Tokens;
+using System.IO;
 using System.Windows;
 using System.Windows.Input;
 
@@ -10,6 +11,7 @@ namespace Educational_Center_Management_System.ViewModels
 {
     public class ManagerUpdateStudentViewModel
     {
+        private byte[] imageBytes;
         private IManagerService _managerService;
         public Student Student { get; set; } = new Student();
         public DateTime? BirthDate { get; set; }
@@ -24,7 +26,16 @@ namespace Educational_Center_Management_System.ViewModels
         }
         private void ExecuteAddPhotoCommand(object? parameter)
         {
-            MessageBox.Show("Not implmented yet. Coming Soon!");
+            var openFileDialog = new Microsoft.Win32.OpenFileDialog
+            {
+                Title = "Select a Photo",
+                Filter = "Image Files (*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg"
+            };
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string filePath = openFileDialog.FileName;
+                imageBytes = File.ReadAllBytes(filePath);
+            }
         }
         private async void ExecuteSubmitCommand(object? parameter)
         {
@@ -38,6 +49,7 @@ namespace Educational_Center_Management_System.ViewModels
                 || Student.Password.IsNullOrEmpty()
                 || birthDate == null
                 || joinDate == null
+                || imageBytes == null
                 )
             {
                 MessageBox.Show("Not all properties are set!");
@@ -46,6 +58,7 @@ namespace Educational_Center_Management_System.ViewModels
             {
                 Student.BirthDate = (DateOnly)birthDate;
                 Student.JoinDate = (DateOnly)joinDate;
+                Student.Photo = imageBytes;
                 bool res = await _managerService.UpdateStudent(Student);
                 MessageBox.Show(res ? "Student Updated Successfuly" : "No student with such id");
             }

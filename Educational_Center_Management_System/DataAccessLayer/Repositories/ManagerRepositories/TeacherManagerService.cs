@@ -48,12 +48,12 @@ namespace Educational_Center_Management_System.DataAccessLayer.Repositories.Mana
             command.Parameters.AddWithValue("@Name", UpdatedTeacher.Name);
             command.Parameters.AddWithValue("@LastName", UpdatedTeacher.LastName);
             command.Parameters.AddWithValue("@FatherName", UpdatedTeacher.Fathername);
-            command.Parameters.AddWithValue("@BirthDate", UpdatedTeacher.BirthDate.ToDateTime(TimeOnly.MinValue));
+            command.Parameters.AddWithValue("@BirthDate", UpdatedTeacher.BirthDate);
             var parameter = command.Parameters.Add("@Photo", System.Data.SqlDbType.VarBinary);
             parameter.Value = (object?)UpdatedTeacher.Photo ?? DBNull.Value; // Handle null photo
             command.Parameters.AddWithValue("@PhoneNumber", UpdatedTeacher.PhoneNumber);
-            command.Parameters.AddWithValue("@JoinDate", UpdatedTeacher.JoinDate.ToDateTime(TimeOnly.MinValue));
-            command.Parameters.AddWithValue("@LeaveDate", DBNull.Value);
+            command.Parameters.AddWithValue("@JoinDate", UpdatedTeacher.JoinDate);
+            command.Parameters.AddWithValue("@LeaveDate", UpdatedTeacher.LeaveDate == null? DBNull.Value : UpdatedTeacher.LeaveDate);
             command.Parameters.AddWithValue("@State", UpdatedTeacher.State);
             command.Parameters.AddWithValue("@Password", UpdatedTeacher.Password);
 

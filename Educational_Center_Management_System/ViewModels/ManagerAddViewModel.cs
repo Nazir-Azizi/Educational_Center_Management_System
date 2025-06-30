@@ -6,6 +6,7 @@ using Educational_Center_Management_System.Services.Interfaces;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace Educational_Center_Management_System.ViewModels
         public ICommand AddPhotoCommand { get; set; }
         public ICommand SubmitCommand { get; set; }
         private UserType _selectedUserType = UserType.Student;
+        private byte[] imageBytes;
         public UserType SelectedUserType
         {
             get { return _selectedUserType; }
@@ -40,7 +42,16 @@ namespace Educational_Center_Management_System.ViewModels
         }
         private void ExecuteAddPhotoCommand(object? parameter)
         {
-            MessageBox.Show("Not implmented yet. Coming Soon!");
+            var openFileDialog = new Microsoft.Win32.OpenFileDialog
+            {
+                Title = "Select a Photo",
+                Filter = "Image Files (*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg"
+            };
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string filePath = openFileDialog.FileName;
+                imageBytes = File.ReadAllBytes(filePath);
+            }
         }
         private async void ExecuteSubmitCommand(object? parameter)
         {
@@ -53,6 +64,7 @@ namespace Educational_Center_Management_System.ViewModels
                 || Student.Password.IsNullOrEmpty()
                 || birthDate == null
                 || joinDate == null
+                || imageBytes == null
                 )
             {
                 MessageBox.Show("Not all properties are set!");
@@ -61,6 +73,7 @@ namespace Educational_Center_Management_System.ViewModels
             {
                 Student.BirthDate = (DateOnly)birthDate;
                 Student.JoinDate = (DateOnly)joinDate;
+                Student.Photo = imageBytes;
                 if (SelectedUserType == UserType.Student)
                 {
                     bool res = await _managerService.AddStudent(Student);
@@ -77,6 +90,7 @@ namespace Educational_Center_Management_System.ViewModels
                     teacher.JoinDate = Student.JoinDate;
                     teacher.State = Student.State;
                     teacher.Password = Student.Password;
+                    teacher.Photo = Student.Photo;
                     bool res = await _managerService.AddTeacher(teacher);
                     MessageBox.Show(res ? "Teacher added Successfuly" : "There was an error");
                 }

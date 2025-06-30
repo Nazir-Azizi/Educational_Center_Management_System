@@ -21,6 +21,6 @@
             <local:InfoUserControl Text="Last Name: "  Value="{Binding Manager.LastName}"/>
             <local:InfoUserControl Text="Password : "  Value="{Binding Manager.Password}"/>
         </StackPanel>
-        <Image Grid.Column="1"/>
+        <Image Grid.Column="1" Grid.Row="0" Source="{Binding Manager.Photo}"/>
     </Grid>
 </UserControl>

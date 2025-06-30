@@ -3,6 +3,7 @@ using Educational_Center_Management_System.Models;
 using Educational_Center_Management_System.Services;
 using Educational_Center_Management_System.Services.Interfaces;
 using Microsoft.IdentityModel.Tokens;
+using System.IO;
 using System.Windows;
 using System.Windows.Input;
 
@@ -11,6 +12,7 @@ namespace Educational_Center_Management_System.ViewModels
     public class ManagerUpdateTeacherViewModel
     {
         private IManagerService _managerService;
+        private byte[] imageBytes;
         public Teacher Teacher { get; set; } = new Teacher();
         public DateTime? BirthDate { get; set; }
         public DateTime? JoinDate { get; set; }
@@ -25,7 +27,16 @@ namespace Educational_Center_Management_System.ViewModels
         }
         private void ExecuteAddPhotoCommand(object? parameter)
         {
-            MessageBox.Show("Not implmented yet. Coming Soon!");
+            var openFileDialog = new Microsoft.Win32.OpenFileDialog
+            {
+                Title = "Select a Photo",
+                Filter = "Image Files (*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg"
+            };
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string filePath = openFileDialog.FileName;
+                imageBytes = File.ReadAllBytes(filePath);
+            }
         }
         private async void ExecuteSubmitCommand(object? parameter)
         {
@@ -40,6 +51,7 @@ namespace Educational_Center_Management_System.ViewModels
                 || Teacher.Password.IsNullOrEmpty()
                 || birthDate == null
                 || joinDate == null
+                || imageBytes == null
                 )
             {
                 MessageBox.Show("Not all properties are set!");
@@ -49,6 +61,7 @@ namespace Educational_Center_Management_System.ViewModels
                 Teacher.BirthDate = (DateOnly)birthDate;
                 Teacher.JoinDate = (DateOnly)joinDate;
                 Teacher.LeaveDate = leaveDate;
+                Teacher.Photo = imageBytes;
                 bool res = await _managerService.UpdateTeacher(Teacher);
                 MessageBox.Show(res ? "Teacher Updated Successfuly" : "No Teacher with such id");
             }

@@ -28,8 +28,8 @@
                 <local:InfoUserControl Text="State: "  Value="{Binding Teacher.State}"/>
                 <local:InfoUserControl Text="Password: "  Value="{Binding Teacher.Password}"/>
             </StackPanel>
-            
-            <Image Grid.Column="1"/>
+
+        <Image Grid.Column="1" Grid.Row="0"  Source="{Binding Teacher.Photo}"/>
             
         </Grid>
         
