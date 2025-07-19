@@ -16,18 +16,20 @@
                 <RowDefinition/>
                 <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Column="0" Margin="20" Grid.RowSpan="2">
-                <local:InfoUserControl Text="ID: " Value="{Binding Teacher.Id}"/>
-                <local:InfoUserControl Text="Name: " Value="{Binding Teacher.Name}"/>
-                <local:InfoUserControl Text="Last Name: "  Value="{Binding Teacher.LastName}"/>
-                <local:InfoUserControl Text="Father Name : "  Value="{Binding Teacher.Fathername}"/>
-                <local:InfoUserControl Text="Date of Birth: "  Value="{Binding Teacher.BirthDate}"/>
-                <local:InfoUserControl Text="Phone Number: "  Value="{Binding Teacher.PhoneNumber}"/>
-                <local:InfoUserControl Text="Join Date: "  Value="{Binding Teacher.JoinDate}"/>
-                <local:InfoUserControl Text="Leave Date: " Value="{Binding Teacher.LeaveDate}"/>
-                <local:InfoUserControl Text="State: "  Value="{Binding Teacher.State}"/>
-                <local:InfoUserControl Text="Password: "  Value="{Binding Teacher.Password}"/>
-            </StackPanel>
+        <ScrollViewer Grid.Column="0" Grid.RowSpan="2">
+                <StackPanel  Margin="20">
+                    <local:InfoUserControl Text="ID: " Value="{Binding Teacher.Id}"/>
+                    <local:InfoUserControl Text="Name: " Value="{Binding Teacher.Name}"/>
+                    <local:InfoUserControl Text="Last Name: "  Value="{Binding Teacher.LastName}"/>
+                    <local:InfoUserControl Text="Father Name : "  Value="{Binding Teacher.Fathername}"/>
+                    <local:InfoUserControl Text="Date of Birth: "  Value="{Binding Teacher.BirthDate}"/>
+                    <local:InfoUserControl Text="Phone Number: "  Value="{Binding Teacher.PhoneNumber}"/>
+                    <local:InfoUserControl Text="Join Date: "  Value="{Binding Teacher.JoinDate}"/>
+                    <local:InfoUserControl Text="Leave Date: " Value="{Binding Teacher.LeaveDate}"/>
+                    <local:InfoUserControl Text="State: "  Value="{Binding Teacher.State}"/>
+                    <local:InfoUserControl Text="Password: "  Value="{Binding Teacher.Password}"/>
+                </StackPanel>
+            </ScrollViewer>
 
         <Image Grid.Column="1" Grid.Row="0"  Source="{Binding Teacher.Photo}"/>
             

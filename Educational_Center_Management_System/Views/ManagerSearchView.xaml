@@ -34,7 +34,9 @@
                  ConverterParameter=Teacher}"/>
             </StackPanel>
         </StackPanel>
-        <ContentControl Grid.Row="1" Content="{Binding CurrentViewModel}"/>
+        <ScrollViewer Grid.Row="1">
+            <ContentControl Content="{Binding CurrentViewModel}"/>
+        </ScrollViewer>
 
     </Grid>
 </UserControl>

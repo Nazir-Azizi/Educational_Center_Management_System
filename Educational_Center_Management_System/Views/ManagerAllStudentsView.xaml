@@ -20,7 +20,6 @@
                     <DataGridTextColumn Header="Phone Number" Binding="{Binding PhoneNumber}"/>
                     <DataGridTextColumn Header="Join Date" Binding="{Binding JoinDate}"/>
                     <DataGridTextColumn Header="State" Binding="{Binding State}"/>
-                    <DataGridTextColumn Header="Password" Binding="{Binding Password}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>

@@ -10,7 +10,7 @@
         <Border DockPanel.Dock="Left" BorderThickness="1" Margin="10" BorderBrush="Black">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="11*"/>
+                    <RowDefinition Height="8*"/>
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" Orientation="Vertical" Background="White" Width="100">

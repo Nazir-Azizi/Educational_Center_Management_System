@@ -19,7 +19,6 @@
                     <DataGridTextColumn Header="Join Date" Binding="{Binding JoinDate}"/>
                     <DataGridTextColumn Header="Leave Date" Binding="{Binding LeaveDate}"/>
                     <DataGridTextColumn Header="State" Binding="{Binding State}"/>
-                    <DataGridTextColumn Header="Password" Binding="{Binding Password}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
