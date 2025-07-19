@@ -4,11 +4,11 @@ A **desktop application** built with **C# WPF** using the **MVVM design pattern*
 
 ## Features
 
-- ✅ **Role-Based Access**: Supports Manager, Teacher, and Student roles
-- ✅ **Modern WPF Interface** with multi-page navigation
-- ✅ **CRUD operations** for managing classes, students, and teachers
-- ✅ **MVVM Architecture** for clean separation of concerns
-- ✅ **Database integration** for data persistence
+- **Role-Based Access**: Supports Manager, Teacher, and Student roles
+- **Modern WPF Interface** with multi-page navigation
+- **CRUD operations** for managing classes, students, and teachers
+- **MVVM Architecture** for clean separation of concerns
+- **Database integration** for data persistence
 
 ## Screenshots
 
@@ -24,6 +24,7 @@ A **desktop application** built with **C# WPF** using the **MVVM design pattern*
 - **Database**: Microsoft SQL Server 2017
 
 ## Folder Structure
+```
 ├── Converters
 ├── DataAccessLayer
 ├── Database schema
@@ -33,7 +34,7 @@ A **desktop application** built with **C# WPF** using the **MVVM design pattern*
 ├── Services
 ├── ViewModels
 ├── Views
-
+```
 
 ## Getting Started
 
@@ -52,7 +53,7 @@ A **desktop application** built with **C# WPF** using the **MVVM design pattern*
 5. Build and run the project
 
 ### Future Improvements
-1. Implement secure authentication
-2. Improve UI with custom styles and themes
-3. Add reporting features (e.g., student progress reports)
-4. Add Admin access layer
+- Implement secure authentication
+- Improve UI with custom styles and themes
+- Add reporting features (e.g., student progress reports)
+- Add Admin access layer
