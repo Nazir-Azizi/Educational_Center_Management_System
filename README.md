@@ -14,10 +14,10 @@ A **desktop application** built with **C# WPF** using the **MVVM design pattern*
 
 <!-- Add screenshots here -->
 ![Login Page](Educational_Center_Management_System/screenshots/loginPage.png)
-![Manager Dashboard](screenshots/managerDashboard.png)
-![Teacher Dashboard](screenshots/teacherDashboard.png)
-![Student Dashboard](screenshots/studentDashboard.png)
-![Add Page](screenshots/addPage.png)
+![Manager Dashboard](Educational_Center_Management_System/screenshots/managerDashboard.png)
+![Teacher Dashboard](Educational_Center_Management_System/screenshots/teacherDashboard.png)
+![Student Dashboard](Educational_Center_Management_System/screenshots/studentDashboard.png)
+![Add Page](Educational_Center_Management_System/screenshots/addPage.png)
 
 ## Tech Stack
 
